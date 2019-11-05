@@ -9,7 +9,11 @@ function setTime() {
   var sec = date.getSeconds() / 60;
   var min = (date.getMinutes() + sec) / 60;
   var hr = (date.getHours() + min) / 12;
-
+  if (sec == 0) {
+    sec_hand.style.transition = "none";
+  } else {
+    sec_hand.style.transition = "all 0.25s";
+  }
   hour_hand.style.setProperty("--rotate", hr * 360);
   min_hand.style.setProperty("--rotate", min * 360);
   sec_hand.style.setProperty("--rotate", sec * 360);
